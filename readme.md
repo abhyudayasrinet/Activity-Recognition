@@ -30,8 +30,28 @@ the reduced feature matrix for each activity
 
 Phase 2
 =======
-TBD
+User Dependent Analysis
 
-Phase 3
-=======
-TBD
+Provided the data of various users, we now apply PCA on the data of each user and build 3 models (SVM, Neural Net and Decision Tree) and experiment with various parameters of the models and evaluate their performances based on the following metrics:
+- Accuracy
+- Precision
+- Recall
+- F1 Score
+
+For each user, 60% of data is used for training and 40% is used for testing.
+
+User Independent Analysis
+
+Using 60% of users for training and 40% users for testing. We build 3 models (SVM, Neural Net and Decision Tree) evaluate their performances using the same metrics as above.
+
+Files
+=====
+
+- data_extraction.py
+Processes the Myo armband data and extracts features from it 
+
+- classifier_phase2.py
+Performs user dependent analysis by loading each users feature data, applying pca on it and training the 3 models
+
+- classifier_phase3.py
+Performs user independent analysis
